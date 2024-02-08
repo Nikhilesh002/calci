@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calci</title>
+</head>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input,button{
+        margin: 5px;
+    }
+</style>
+<body>
+    <h1>Calculator</h1>
+    <label for="ina">Enter First Number</label>
+    <input id="ina" type="number">
+    <br>
+    <label for="inb">Enter Sec Number</label>
+    <input id="inb" type="number">
+    <br>
+    <label for="">Select operation: </label>
+    <button id="add" type="submit">+</button>
+    <button id="sub" type="submit">-</button>
+    <button id="prod" type="submit">*</button>
+    <button id="div" type="submit">/</button>
+    <button id="mod" type="submit">%</button>
+    <h3 id="res"></h3>
+</body>
+<script>
+    let x=document.querySelector('#ina');
+    let y=document.querySelector('#inb');
+    let result=document.querySelector('#res');
+    let ans='The calculation is ';
+    
+
+    document.querySelector('#add').addEventListener('click',function(e){
+        e.preventDefault();
+        let a=parseInt(x.value);
+        let b=parseInt(y.value);
+        result.innerHTML=ans+`${a} + ${b} = ${a+b}`;
+    })
+
+    document.querySelector('#sub').addEventListener('click',function(e){
+        e.preventDefault();
+        let a=parseInt(x.value);
+        let b=parseInt(y.value);
+        result.innerHTML=ans+`${a} - ${b} = ${a-b}`;
+    })
+
+    document.querySelector('#prod').addEventListener('click',function(e){
+        e.preventDefault();
+        let a=parseInt(x.value);
+        let b=parseInt(y.value);
+        result.innerHTML=ans+`${a} * ${b} = ${a*b}`;
+    })
+
+    document.querySelector('#div').addEventListener('click',function(e){
+        e.preventDefault();
+        let a=parseInt(x.value);
+        let b=parseInt(y.value);
+        result.innerHTML=ans+`${a} / ${b} = ${a/b}`;
+    })
+
+    document.querySelector('#mod').addEventListener('click',function(e){
+        e.preventDefault();
+        let a=parseInt(x.value);
+        let b=parseInt(y.value);
+        result.innerHTML=ans+`${a} % ${b} = ${a%b}`;
+    })
+
+</script>
+</html>
